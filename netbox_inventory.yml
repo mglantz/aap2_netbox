@@ -6,13 +6,12 @@ env:
   NETBOX_API: '{{ NETBOX_API }}'
   NETBOX_TOKEN: '{{ NETBOX_TOKEN }}'
 
-
 plugin: netbox.netbox.nb_inventory
-api_endpoint: "{{ NETBOX_API }}"
+api_endpoint: NETBOX_API
 
 # READ ONLY TOKEN
 # Feel free to use it if my Netbox instance is up and running. No warranty of availability provided :D
-token: "{{ NETBOX_TOKEN }}"
+token: NETBOX_TOKEN
 validate_certs: True
 
 config_context: True
