@@ -51,6 +51,7 @@ Then:
 - choose your custom credential
 - choose "/ (project root)" for the inventory file
 - tick "update on launch" if you want your inventory to be refreshed any time you call the inventory
+- choose your custom execution environment that contains the Netbox collection
 - save and sync
 - in the hosts tab you should see your inventory items
 
