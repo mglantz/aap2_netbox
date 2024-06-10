@@ -1,12 +1,14 @@
 # https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_inventory_inventory.html
+#
+vars:
+  - vault.yml
 
 plugin: netbox.netbox.nb_inventory
-api_endpoint: https://netbox.labo.ovh
+api_endpoint: "{{ vault_netbox_instance }}"
 
 # READ ONLY TOKEN
-# ONLY USED FOR DEMO. VAULT ALL YOUR TOKENS AND SECRETS!
 # Feel free to use it if my Netbox instance is up and running. No warranty of availability provided :D
-token: 7661a8ea30cdb5870c98dbcb7b3a2eacb99d52e8
+token: "{{ vault_netbox_token }}"
 validate_certs: True
 
 config_context: True
