@@ -1,14 +1,14 @@
 # https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_inventory_inventory.html
 #
-vars:
-  - vault.yml
+
+# CREDENTIALS ARE PASSED AS CUSTOM CREDS
 
 plugin: netbox.netbox.nb_inventory
-api_endpoint: "{{ vault_netbox_instance }}"
+api_endpoint: "{{ NETBOX_API }}"
 
 # READ ONLY TOKEN
 # Feel free to use it if my Netbox instance is up and running. No warranty of availability provided :D
-token: "{{ vault_netbox_token }}"
+token: "{{ NETBOX_TOKEN }}"
 validate_certs: True
 
 config_context: True
