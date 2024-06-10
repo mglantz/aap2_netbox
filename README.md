@@ -14,11 +14,41 @@ Documentation can be found [here](https://netbox-ansible-collection.readthedocs.
 
 In order to use this example:
 
+- create a custom credentials type in AAP (Administration > Credential Types > Add)
+
+Input configuration:
+
+```
+fields:
+  - id: NETBOX_API
+    type: string
+    label: 'Netbox API endpoint (ex: https://netbox.example.org)'
+    secret: true
+  - id: NETBOX_TOKEN
+    type: string
+    label: Netbox token
+    secret: true
+required:
+  - NETBOX_API
+  - NETBOX_TOKEN
+```
+
+Injector configuration:
+
+```
+env:
+  NETBOX_API: '{{ NETBOX_API }}'
+  NETBOX_TOKEN: '{{ NETBOX_TOKEN }}'
+```
+
+Then:
+
 - fork this repository
-- edit `netbox_inventory.yml` accordingly
-- create a project in AAP2 pointing to your fork
+- create a project in AAP2 pointing to your fork and branch "vaulted_token"
 - create an inventory
 - create a new source in your inventory with type "Sources from a Project"
+- choose the project you just created and synced
+- choose your custom credential
 - choose "/ (project root)" for the inventory file
 - tick "update on launch" if you want your inventory to be refreshed any time you call the inventory
 - save and sync
