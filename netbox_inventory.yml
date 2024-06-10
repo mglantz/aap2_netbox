@@ -2,6 +2,11 @@
 #
 
 # CREDENTIALS ARE PASSED AS CUSTOM CREDS FROM AAP, WE NEED TO LOAD THE VARS
+env:
+  NETBOX_API: '{{ NETBOX_API }}'
+  NETBOX_TOKEN: '{{ NETBOX_TOKEN }}'
+
+
 plugin: netbox.netbox.nb_inventory
 api_endpoint: "{{ NETBOX_API }}"
 
