@@ -6,12 +6,14 @@ env:
   NETBOX_API: '{{ NETBOX_API }}'
   NETBOX_TOKEN: '{{ NETBOX_TOKEN }}'
 
+# If you want to pass in clear text (bad idea) you'd have to declare those
+#api_endpoint: https://...
+#token: abc...
+
 plugin: netbox.netbox.nb_inventory
-api_endpoint: NETBOX_API
 
 # READ ONLY TOKEN
 # Feel free to use it if my Netbox instance is up and running. No warranty of availability provided :D
-token: NETBOX_TOKEN
 validate_certs: True
 
 config_context: True
